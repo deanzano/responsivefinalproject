@@ -47,7 +47,7 @@ figure img {
   text-align: center;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-
+}
 
 @media (min-width: 772px) {
   .grid {
@@ -91,5 +91,16 @@ figure img {
   body {
     background-color: #121212;  /* Dark body background */
     color: #f5f5f5;             /* Light body font color */
+  }
+  a{
+    color: #00ffff;
+  }
+  a:visited{
+    color: #66ccff;
+  }
+  a:hover,
+  a:focus{
+    color: #ffffff;
+    text-decoration: underline;
   }
 }
