@@ -1,153 +1,97 @@
+/* Base Styles (Mobile-First) */
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-    background-color: #dedede;
+  background-color: #dedede;
+  padding: 5px;
+  margin: 15px;
+  font-size: 25px;
+  font-family: Arial, sans-serif;
 }
 
 h1 {
-    text-align: center;
-    font-family:Arial, sans-serif;
-    font-size: 32px;
+  text-align: center;
+  font-size: 1.95em;
 }
 
-a {
-    color: #000;
-    text-decoration: none;
-    font-family:Arial, sans-serif;
+h2 {
+  text-align: center;
 }
 
-p {
-   font-size: 25px;
-   font-family:Arial, sans-serif;
+li {
+  margin-top: 20px;
 }
 
-img{
-  width:100%;
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
 }
 
-
-p{
-  text-align:center;
+figure {
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  padding: 10px;
 }
 
-div img{
-    width:150px;
-    height: 150px;
-    display:block;
-    margin:auto;
+figure img {
+  width: 100%;
+  border: 5px solid blue;
+  border-radius: 35px; /* Will be overridden in media queries */
 }
-
-div{
-  display: inline-block;
-  width: 24%;
-  margin: 5px;
-  padding: 2px;
-}
-
-
-
-
-@media screen and (min-width: 772px) {
-  div{
-    width: 45vw;
-  }
-  img{
-    max-height: 30vh;
-  }
-}
-
-@media screen and (min-width: 998px) {
-  div{
-    width: 30vw;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 
-main {
-    border: 5px #000 solid;
-    margin: 10px;
-}
- */
-/* 
-
-.container {
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-items: center;
-}
- */
-/* img{
-    width: 200px;
-    height: 200px;
-    padding: 5px;
-} */
-
-/* .child {
-    position: relative;
-    display: inline-block;
-    border: 5px black solid;
-    margin: 5px;
-    border-radius: 5px;
-} */
-
-/* 
 
 .label {
-    display: none;
-    position: absolute;
-    top: 40%;
-    left: 40%;
-} */
-/* 
-.button {
-    display: inline-block;
-    border: 2px solid #000;
-    padding: 5px;
-    border-radius: 25px;
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
- */
-/* 
-.button:hover {
-    background-color:#fff;
-} */
 
-/* 
-footer {
-    display: flex;
-    justify-content: center;
-} */
+/* Tablet View (min-width: 772px) */
+@media (min-width: 772px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
 
-/* 
-header {
-    border-radius: 5px;
-    border: 5px #000 solid;
-    margin: 10px;
-} */
+  .grid figure {
+    border-radius: 50%;
+  }
 
-/* 
-.label {
-    display: none;
-    position: absolute;
-    top: 40%;
-    left: 40%;
-} */
-/* 
-.child:hover .label {
-    display: block;
-} */
+  .grid figure:nth-last-of-type(1) {
+    grid-column: span 2;
+  }
+}
+
+/* Large Screen View (min-width: 992px) */
+@media (min-width: 992px) {
+  .grid figure {
+    border-radius: 0;
+  }
+
+  .grid figure:nth-child(3n) {
+    grid-column: span 2;
+  }
+}
+
+/* Accessibility: Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  figure {
+    background-color: #222;     /* Dark background */
+    color: #f5f5f5;             /* Light font color */
+    border-color: black;        /* Black border */
+  }
+
+  body {
+    background-color: #121212;  /* Dark body background */
+    color: #f5f5f5;             /* Light body font color */
+  }
+}
